@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Unlock</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f5f5f5;
+            font-family: Arial, sans-serif;
+        }
+        
+        .faceloginPath {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            max-width: 90%;
+        }
+        
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333333;
+        }
+        
+        p {
+            margin-bottom: 20px;
+            color: #666666;
+        }
+        
+        .fromFiled {
+            margin-bottom: 20px;
+        }
+        
+        .inputLabel {
+            display: block;
+            margin-bottom: 5px;
+            color: #333333;
+        }
+        
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        
+        .imgContainer {
+            position: relative;
+        }
+        
+        .loginCameraIcon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 100%;
+            max-height: 100%;
+        }
+        
+        .loginFooter2 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .backWardIcn {
+            color: #333333;
+            text-decoration: none;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        
+        .backWardIcn:hover {
+            color: #5cb85c;
+        }
+        
+        .loginMiddle button {
+            background-color: #5cb85c;
+            color: #ffffff;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .loginMiddle button:hover {
+            background-color: #4cae4c;
+        }
+    </style>
+</head>
+<body>
+    <div class="faceloginPath">
+        <h2>Face Unlock</h2>
+        <p>Enter your username and validate your face to login</p>
+        <form id="faceUnlockForm">
+            <div class="fromFiled">
+                <label class="inputLabel" for="loginidData">Username</label>
+                <input type="text" placeholder="Username/Login ID" id="loginidData" name="loginId">
+            </div>
+            <div class="imgContainer">
+                <img src="">
+                <center><video id="camera-stream" width="300" height="264" autoplay></video></center>
+            </div>
+        </form>
+        
+        <div class="loginFooter2">
+            <div class="backWard">
+                <a href="login.html" class="backWardIcn">Go Back</a>
+            </div>
+            <div class="loginMiddle">
+                <button type="button" name="facelogin" id="id9">Login</button>
+                
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        const video = document.getElementById('camera-stream');
+
+        // Check if getUserMedia is supported by the browser
+        if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+            // Request access to the camera
+            navigator.mediaDevices.getUserMedia({ video: true })
+                .then(function(stream) {
+                    // Assign the stream to the video element
+                    video.srcObject = stream;
+                    video.play();
+                })
+                .catch(function(err) {
+                    console.error('Could not access the camera: ', err);
+                });
+        } else {
+            console.error('getUserMedia is not supported by your browser');
+        }
+    </script>
+</body>
+</html>
