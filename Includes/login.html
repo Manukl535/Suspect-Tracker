@@ -106,10 +106,9 @@
 </head>
 <body>
     <div class="login-form">
-        <form id="login-form" action="sus.html" method="POST">
+        <form id="login-form" action="index.html" method="POST">
             <div class="avatar"><i class="material-icons">&#xE7FF;</i></div>
             <h4 class="modal-title">Login to Your Account</h4>
-            <center><p style="color:red;"><?php if(isset($_GET['error'])) { echo $_GET['error']; } ?></p></center>
             
             <!-- Radio buttons for login options -->
             <div class="form-group">
@@ -131,7 +130,7 @@
             
             <div class="form-group small clearfix">
                 <label class="checkbox-inline"><input type="checkbox"> Remember me</label>
-                <a href="forgot_password.php" class="forgot-link">Forgot Password?</a>
+                <a href="#" class="forgot-link">Forgot Password?</a>
             </div> 
             <input type="submit" class="btn btn-primary btn-block btn-lg" name="login-btn" value="Login">              
         </form>
