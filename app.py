@@ -5,9 +5,9 @@ app = Flask(__name__)
 
 # Connect to  MySQL database
 db = mysql.connector.connect(
-    host="your_host",
-    user="your_username",
-    passwd="your_password",
+    host="localhost",
+    user="root",
+    passwd="",
     database="suspect_tracker"
 )
 
