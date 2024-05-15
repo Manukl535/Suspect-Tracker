@@ -14,7 +14,7 @@ video_file_path = input("Enter the path of the video file: ")
 video_capture = cv2.VideoCapture(video_file_path)
 
 # Define the directory containing the image samples
-samples_directory = "Img_samples"
+samples_directory = "Suspects"
 
 # Get the list of sample image files
 sample_files = os.listdir(samples_directory)
