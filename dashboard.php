@@ -1,21 +1,3 @@
-<!-- Designed and Developed by Manu and Srisha -->
-
-
-<?php
-session_start();
-
-include('Includes/connection.php');
-
-if (!isset($_SESSION['logged-in'])) {
-    header('location:index.php');
-    exit;
-}
-
-
-
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -227,7 +209,7 @@ input[type="file"] {
 </div>
 
     
-    <script>
+<script>
    // Function to toggle upload options based on the selected choice
    function toggleUploadOptions(choice) {
     var sourceFileLabel = document.getElementById("sourceFileLabel");
@@ -250,7 +232,7 @@ input[type="file"] {
         suspectImageInput.style.display = "none";
         suspectImageUpload.style.display = "none";
         suspectImageResult.style.display = "none";
-    } else {
+    } else if (choice === "live-stream") {
         sourceFileLabel.style.display = "none";
         fileInput.style.display = "none";
         uploadButton.style.display = "none";
@@ -262,7 +244,9 @@ input[type="file"] {
         suspectImageUpload.style.display = "block";
         suspectImageResult.style.display = "block";
     }
+    console.log("Choice selected:", choice);
 }
+
 
 
 // Call toggleUploadOptions function when the page is loaded to show/hide upload options based on the checked radio button
@@ -270,20 +254,30 @@ window.onload = function() {
     toggleUploadOptions('pre-recorded');
 
     document.getElementById("trackSuspectButton").addEventListener("click", function() {
-    // Make an AJAX request to your PHP script
-    var xhr = new XMLHttpRequest();
-    xhr.open("GET", "track_suspect.php", true);
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState == 4 && xhr.status == 200) {
-            // Response from PHP script (optional)
-            console.log(xhr.responseText);
-        }
-    };
-    xhr.send();
-});
+        // Check which radio button is selected
+        var choice = document.querySelector('input[name="choice"]:checked').value;
+        console.log("Making AJAX request for:", choice);
 
-};  
-    </script>
-    
+        // Make an AJAX request based on the selected choice
+        var xhr = new XMLHttpRequest();
+
+        if (choice === "pre-recorded") {
+            xhr.open("GET", "track_suspect.php", true);
+        } else if (choice === "live-stream") {
+            xhr.open("GET", "track_live.php", true);
+        }
+
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                // Response from PHP script (optional)
+                console.log(xhr.responseText);
+            }
+        };
+        xhr.send();
+    });
+};
+
+</script>
+
     </body>
     </html>

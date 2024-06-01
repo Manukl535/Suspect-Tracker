@@ -11,11 +11,6 @@ if (!isset($_SESSION['logged-in'])) {
 // Directory where uploaded files will be moved
 $uploadDirectory = "images/";
 
-// Check if the directory exists, if not, create it
-if (!file_exists($uploadDirectory)) {
-    mkdir($uploadDirectory, 0777, true); // Creates the directory recursively with full permissions
-}
-
 // Check if file has been uploaded
 if(isset($_FILES['suspectImage'])) {
     $file_name = $_FILES['suspectImage']['name'];

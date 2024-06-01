@@ -1,5 +1,3 @@
-# Developed by Manu and Srisha
-
 import sys
 import cv2
 import os
@@ -29,7 +27,10 @@ def find_sample_names(face_region):
         result = cv2.matchTemplate(face_region, sample_img, cv2.TM_CCOEFF_NORMED)
         _, max_val, _, max_loc = cv2.minMaxLoc(result)
         if max_val > 0.8:  
-            detected_names.append(sample_name)
+            # Filter out detections based on size, aspect ratio, and match location
+            if max_loc[0] > 0 and max_loc[1] > 0:  # Check if match location is valid
+                if w > 50 and h > 50:  # Adjust size thresholds as needed
+                    detected_names.append(sample_name)
     return detected_names
 
 # Set to keep track of printed names
@@ -91,4 +92,3 @@ with open("Detected_faces.txt", "w") as file:
 
 # Print a message indicating that the names have been saved to the file
 print("Detected names have been saved to 'Detected_faces.txt' file.")
-
