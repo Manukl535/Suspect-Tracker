@@ -192,25 +192,27 @@ input[type="file"] {
         <div class="choice-options">
             <input type="radio" name="choice" value="live-stream" onclick="toggleUploadOptions('live-stream')"> Live stream
         </div>
+    
         <div id="upload-options">
+    
             <!-- Upload options for pre-recorded media -->
             <form action="upload.php" method="post" enctype="multipart/form-data">
-    
                 <p id="sourceFileLabel">Source File:</p>
                 <input type="file" name="sourceFile" id="fileInput">
                 <button type="submit" id="uploadButton">Upload</button>
                 <div id="result" style="display: none;"></div>
-                
             </form>
 
-            
             <!-- Upload options for suspect image -->
-            <p id="suspectImageLabel">Suspect Image:</p>
-            <input type="file" id="suspectImageInput">
-            <button id="suspectImageUpload">Upload</button>
-            <div id="suspectImageResult"></div>
+            <form action="upload_image.php" method="post" enctype="multipart/form-data">
+                <p id="suspectImageLabel">Suspect Image:</p>
+                <input type="file" name="suspectImage" id="suspectImageInput">
+                <button type="submit" id="suspectImageUpload">Upload</button>
+                <div id="suspectImageResult"></div>
+            </form>
 
         </div>
+
         
 <center>
 <button id="trackSuspectButton">Track Suspect</button>
