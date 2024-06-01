@@ -1,3 +1,17 @@
+<!-- Designed and Developed by Manu and Srisha -->
+
+
+<?php
+session_start();
+
+include('Includes/connection.php');
+
+if (!isset($_SESSION['logged-in'])) {
+    header('location:index.php');
+    exit;
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
