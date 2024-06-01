@@ -200,8 +200,10 @@ input[type="file"] {
                 <input type="file" name="sourceFile" id="fileInput">
                 <button type="submit" id="uploadButton">Upload</button>
                 <div id="result" style="display: none;"></div>
+                
+            </form>
+
             
-    
             <!-- Upload options for suspect image -->
             <p id="suspectImageLabel">Suspect Image:</p>
             <input type="file" id="suspectImageInput">
@@ -209,7 +211,7 @@ input[type="file"] {
             <div id="suspectImageResult"></div>
 
         </div>
-        </form>
+        
 <center>
 <button id="trackSuspectButton">Track Suspect</button>
 
