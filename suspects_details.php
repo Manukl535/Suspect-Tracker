@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="refresh" content="2">
 <title>Suspect Details</title>
 
 <style>
@@ -10,7 +11,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 50vh;
 }
 table {
     border-collapse: collapse;
@@ -33,8 +34,10 @@ img {
 
 </head>
 <body>
+    <center><h1>Matched Suspects</h1></center>
 
 <div class="container">
+
 <center>
 
 <a href="#" onclick="window.history.back(); return false;"><i style="font-size:24px" class="fa">&#xf190;</i></a>
@@ -42,6 +45,8 @@ img {
 &nbsp;
 
 <a href="dashboard.php"><i style="font-size:24px;color:blue;" class="fa">&#xf015;</i></a>
+
+
 
 <?php
 include('Includes/connection.php');
