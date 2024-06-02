@@ -1,24 +1,27 @@
 import cv2
 import os
 import time
+import webbrowser
 
 # Load the pre-trained face detection model
 face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
 
 # Directory containing reference images
-images_dir = 'images/'
+images_dir = 'images/manu'
 
 # List all image files in the directory
 image_files = os.listdir(images_dir)
 
+# Function to open the browser
+def open_browser():
+    webbrowser.open("http://localhost/suspect-tracker/live_suspect_details.php")
+
 # Open the webcam (the default camera)
 video_capture = cv2.VideoCapture(0)
 
-start_time = time.time()
-elapsed_time = 0
 match_found = False
 
-while elapsed_time < 30:
+while not match_found:
     # Capture each frame from the webcam
     ret, frame = video_capture.read()
 
@@ -63,23 +66,20 @@ while elapsed_time < 30:
     try:
         with open('live_suspect.txt', 'w') as file:
             if match_found:
-                file.write("Match found!")
+                file.write(os.path.basename(os.path.normpath(images_dir)))
             else:
                 file.write("No match found!")
         print("live_suspect.txt generated successfully.")
     except Exception as e:
         print("Error occurred while writing to live_suspect.txt:", e)
     
-    if match_found:
-        # End the execution if match is found
-        break
-    
     # Display the resulting frame
     cv2.imshow('Face Detection', frame)
 
-    # Update elapsed time
-    elapsed_time = time.time() - start_time
-
+    # Open the browser if match found
+    if match_found:
+        open_browser()
+    
     # Break the loop when 'q' is pressed
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break

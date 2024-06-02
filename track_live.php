@@ -1,6 +1,6 @@
 <?php
 // Path to the directory containing live images
-$liveImageDirectory = "images/";
+$liveImageDirectory = "images/manu/";
 
 // Check if there are any live images available
 $liveImages = array_merge(glob($liveImageDirectory . "*.jpg"), glob($liveImageDirectory . "*.png"));
