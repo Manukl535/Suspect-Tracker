@@ -2,6 +2,9 @@ import sys
 import cv2
 import os
 import time
+import http.server
+import threading
+import webbrowser
 
 # Load the pre-trained face detection model
 face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
@@ -41,6 +44,24 @@ start_time = time.time()
 
 # Time limit in seconds
 time_limit = 60  
+
+# Function to start a local web server
+def start_server():
+    os.chdir(os.path.dirname(__file__))
+    http.server.SimpleHTTPRequestHandler.extensions_map['.php'] = 'text/php'
+    server = http.server.HTTPServer(('localhost', 8000), http.server.SimpleHTTPRequestHandler)
+    server.serve_forever()
+
+# Start the local web server in a separate thread
+server_thread = threading.Thread(target=start_server)
+server_thread.daemon = True
+server_thread.start()
+
+# Wait for the server to start
+time.sleep(1)
+
+# Open the PHP file in the default web browser
+webbrowser.open("http://localhost/suspect-tracker/suspects_details.php")
 
 while True:
     # Check if time limit exceeded

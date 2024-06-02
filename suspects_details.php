@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Suspect Details</title>
+
 <style>
 .container {
     display: flex;
@@ -28,10 +29,19 @@ img {
     margin: auto;
 }
 </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 <body>
 
 <div class="container">
+<center>
+
+<a href="#" onclick="window.history.back(); return false;"><i style="font-size:24px" class="fa">&#xf190;</i></a>
+
+&nbsp;
+
+<a href="dashboard.php"><i style="font-size:24px;color:blue;" class="fa">&#xf015;</i></a>
 
 <?php
 include('Includes/connection.php');
