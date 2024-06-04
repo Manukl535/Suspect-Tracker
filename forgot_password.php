@@ -11,9 +11,9 @@ function function_alert($message, $redirectUrl) {
 require_once 'C:\xampp\htdocs\twilio-php-main\src\Twilio\autoload.php';
 use Twilio\Rest\Client;
 
-$sid = "ACc19e6f7c595a7dfbab5f868199db6853";
-$token = "6dd18aa992d932cb6d3dacbb39b463a8";
-$twilioPhoneNumber = '+13313214657';
+$sid = "";
+$token = "";
+$twilioPhoneNumber = '';
 $twilio = new Client($sid, $token);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
