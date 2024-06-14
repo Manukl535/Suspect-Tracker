@@ -46,7 +46,7 @@ img {
 
 <a href="dashboard.php"><i style="font-size:24px;color:blue;" class="fa">&#xf015;</i></a>
 
-
+<br/><br/>
 
 <?php
 include('Includes/connection.php');

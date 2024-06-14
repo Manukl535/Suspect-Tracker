@@ -46,7 +46,7 @@ img {
 
 <a href="dashboard.php"><i style="font-size:24px;color:blue;" class="fa">&#xf015;</i></a>
 
-
+<br/><br/>
 
 <?php
 include('Includes/connection.php');
@@ -73,7 +73,7 @@ if ($result->num_rows > 0) {
         echo "<td>" . $row["name"] . "</td>";
         echo "<td>" . $row["age"] . "</td>";
         echo "<td>" . $row["address"] . "</td>";
-        echo "<td><img src='suspects/" . $row["image"] . "' width='100'></td>";
+        echo "<td><img src='./" . $row["image"] . "' width='100'></td>";
         echo "<td>" . $row["prev_crimes"] . "</td>";
         echo "</tr>";
     }
