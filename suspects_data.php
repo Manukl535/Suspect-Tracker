@@ -223,8 +223,24 @@ $suspects = getSuspects($conn);
                             <td><?php echo $row['name']; ?></td>
                             <td><?php echo $row['age']; ?></td>
                             <td><?php echo $row['address']; ?></td>
-                            <td><img src="Suspects/<?php echo $row['image']; ?>" alt="Image" style="max-width: 100px; max-height: 100px;"></td>
-                            <td><?php echo $row['prev_crimes']; ?></td>
+                            <td>
+                            <?php
+                            $imagePath = 'Suspects/' . $row['image'];
+                            if (file_exists($imagePath)) {
+                                echo '<img src="' . $imagePath . '" alt="Image" style="max-width: 100px; max-height: 100px;">';
+                            } else {
+                                // Image not found in Suspects directory, try parent directory
+                                $parentImagePath = './' . $row['image']; // Images in parent directory
+                                if (file_exists($parentImagePath)) {
+                                    echo '<img src="' . $parentImagePath . '" alt="Image" style="max-width: 100px; max-height: 100px;">';
+                                } else {
+                                    // Neither image found
+                                    echo 'Image not found';
+                                }
+                            }
+                            ?>
+                        </td>
+                         <td><?php echo $row['prev_crimes']; ?></td>
                         </tr>
                     <?php } ?>
                 </tbody>
