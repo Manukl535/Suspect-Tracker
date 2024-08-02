@@ -77,13 +77,7 @@ p {
 }
 
 button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-top: 10px;
+
 }
 
 button:hover {
@@ -197,7 +191,9 @@ input[type="file"] {
             <form action="upload.php" method="post" enctype="multipart/form-data">
                 <p id="sourceFileLabel">Source File:</p>
                 <input type="file" name="sourceFile" id="fileInput">
-                <button type="submit" id="uploadButton">Upload</button>
+                <button type="submit" id="uploadButton" style="    background-color: #4CAF50;color: white;padding: 10px 20px;border: none;border-radius: 4px;cursor: pointer;margin-top: 10px;">
+                    Upload
+                </button>
                 <div id="result" style="display: none;"></div>
             </form>
 
@@ -205,7 +201,9 @@ input[type="file"] {
             <form action="upload_image.php" method="post" enctype="multipart/form-data">
                 <p id="suspectImageLabel">Suspect Image:</p>
                 <input type="file" name="suspectImage" id="suspectImageInput">
-                <button type="submit" id="suspectImageUpload">Upload</button>
+                <button type="submit" id="suspectImageUpload" style="background-color: #4CAF50;color: white;padding: 10px 20px;border: none;border-radius: 4px;cursor: pointer;margin-top: 10px;">
+                    Upload
+                </button>
                 <div id="suspectImageResult"></div>
             </form>
 
@@ -213,7 +211,9 @@ input[type="file"] {
 
         
 <center>
-<button id="trackSuspectButton">Track Suspect</button>
+<button id="trackSuspectButton" style = "background-color: #4CAF50;color: white;padding: 10px 20px;border: none;border-radius: 4px;cursor: pointer;margin-top: 10px;">
+    Track Suspect
+</button>
 
     <hr style="border-color: grey; width: 80%;">
 </center>

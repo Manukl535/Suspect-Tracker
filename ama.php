@@ -54,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         position: fixed;
         bottom: 20px;
         right: 20px;
-        width: 350px; 
+        width: 350px; /* Increased width for the widget container */
         background-color: #f0f0f0;
         border: 1px solid #ccc;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -74,8 +74,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     .widget-body {
         padding: 10px;
-        width: 95%; 
-        max-width: 100%; 
+        width: 95%; /* Increased width of the widget body */
+        max-width: 100%; /* Ensure it doesn't exceed 100% */
         margin: 0 auto;
     }
 
@@ -110,14 +110,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         background-color: #4CAF50;
         color: white;
         align-self: flex-end;
-        max-width: 100%; 
+        max-width: 100%; /* Adjust the maximum width of user messages */
     }
 
     .assistant-message .message {
         background-color: #f0f0f0;
         color: #333;
         align-self: flex-start;
-        max-width: 100%; 
+        max-width: 100%; /* Adjust the maximum width of assistant messages */
     }
 
     .input-container {
@@ -305,11 +305,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 // Define greetings based on the time of day
 var greeting;
 if (currentHour >= 0 && currentHour < 12) {
-    greeting = "Good morning Officer!";
+    greeting = "Good morning officer!";
 } else if (currentHour >= 12 && currentHour < 16) {
-    greeting = "Good afternoon Officer!";
+    greeting = "Good afternoon officer!";
 } else {
-    greeting = "Good evening Officer!";
+    greeting = "Good evening officer!";
 }
 
 // Update the greeting message in the HTML
