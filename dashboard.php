@@ -110,6 +110,8 @@ input[type="file"] {
   padding-top: 10px;
 }
 
+
+
         
     </style>
 </head>
@@ -221,7 +223,7 @@ input[type="file"] {
 <center><p>2024 &#169; All Rights Reserved <br/>Designed and Maintained by <b>Manu </b>and <b>Srisha</b></p></center>
 
 </div>
-
+<?php include('ama.php'); ?>
     
 <script>
    // Function to toggle upload options based on the selected choice

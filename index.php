@@ -184,6 +184,7 @@ if(isset($_POST['login-btn'])){
         </div>
     
     </footer></center>
+    <?php include('ama.php'); ?>
     <?php
 
 if (isset($_SESSION['login_message'])) {

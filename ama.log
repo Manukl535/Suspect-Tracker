@@ -1,0 +1,23 @@
+DEBUG:root:Dataset loaded successfully.
+DEBUG:root:Dataset loaded successfully.
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): api.weatherapi.com:80
+DEBUG:urllib3.connectionpool:http://api.weatherapi.com:80 "GET /v1/current.json?key=2fd7c4ec296b4c8da6b74927241807&q=the%20weather%20in%20banglore&aqi=no HTTP/11" 200 None
+DEBUG:root:Dataset loaded successfully.
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): api.weatherapi.com:80
+DEBUG:urllib3.connectionpool:http://api.weatherapi.com:80 "GET /v1/current.json?key=2fd7c4ec296b4c8da6b74927241807&q=in%20banglore&aqi=no HTTP/11" 200 None
+DEBUG:root:Dataset loaded successfully.
+DEBUG:root:Dataset loaded successfully.
+DEBUG:root:Dataset loaded successfully.
+DEBUG:root:Dataset loaded successfully.
+DEBUG:root:Dataset loaded successfully.
+DEBUG:root:Dataset loaded successfully.
+DEBUG:root:Dataset loaded successfully.
+DEBUG:root:Dataset loaded successfully.
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): api.weatherapi.com:80
+DEBUG:urllib3.connectionpool:http://api.weatherapi.com:80 "GET /v1/current.json?key=2fd7c4ec296b4c8da6b74927241807&q=in%20chicago&aqi=no HTTP/11" 200 None
+DEBUG:root:Dataset loaded successfully.
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): api.weatherapi.com:80
+DEBUG:urllib3.connectionpool:http://api.weatherapi.com:80 "GET /v1/current.json?key=2fd7c4ec296b4c8da6b74927241807&q=in%20mysore&aqi=no HTTP/11" 200 None
+DEBUG:root:Dataset loaded successfully.
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): api.weatherapi.com:80
+DEBUG:urllib3.connectionpool:http://api.weatherapi.com:80 "GET /v1/current.json?key=2fd7c4ec296b4c8da6b74927241807&q=in%20banglore&aqi=no HTTP/11" 200 None
