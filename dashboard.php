@@ -104,6 +104,37 @@ input[type="file"] {
   padding-top: 10px;
 }
 
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input[type="file"] {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.form-group button {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+}
+
+.form-group button:hover {
+    background-color: #45a049;
+}
 
 
         
@@ -136,7 +167,7 @@ input[type="file"] {
     </div>
     <div class="w3-bar-block">
         <div style="margin-top: 10px;"></div>
-        <a href="suspects_data.php" class="w3-bar-item w3-button w3-padding w3-light-blue"><i class="fa fa-database"></i>&nbsp; Suspects Data</a>
+        <a href="suspects_data.php" class="w3-bar-item w3-button w3-padding w3-light-blue"><i class="fa fa-database"></i>&nbsp; Criminals Data</a>
     </div>
     <div class="w3-bar-block">
         <div style="margin-top: 10px;"></div>

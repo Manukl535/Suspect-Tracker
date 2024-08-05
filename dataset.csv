@@ -1,5 +1,10 @@
 Operation,Description,Example Utterance,Answer,Category,Intent
 Upload Video,Handles video upload requests,I want to upload a video,Sure after login select the Pre-recorded media and on select media (Eg:video.mp4) from any directory and click of upload button,Media,UploadVideo
+Upload Image,Handles image upload requests,I want to upload a image,Sure after login select the Live stream and on select image (Eg:image.jpg) from any directory and click the upload button,Media,UploadImage
+Add New Criminal,Handles adding new criminal records,Add a new criminal,Select Criminals Data and Enter the details (name age description) and click "Add Criminals" to submit.,Criminal Records,AddCriminal
+Delete Criminal,Handles deleting criminal records,Delete acriminal,Select the criminal from the list and click "Delete" to remove the record.,Criminal Records,DeleteCriminal
+Edit Criminal,Handles editing existing criminal records,Edit a criminal ,Select the criminal from the list update the details (name age description) and click "Save Changes" to update the record.,Criminal Records,EditCriminal
+Forgot Password,Handles password recovery requests,Forgot password,Click "Forgot Password" on the login page enter your email and phone and enter OTP and New Password to reset your password.,Account,ForgotPassword
 Greetings,Greetings on user input,Hi,Hello! How can I assist you today?,General,Greetings
 Greetings,Greetings on user input,hi,Hello! How can I assist you today?,General,Greetings
 Greetings,Greetings on user input,HAI,Hello! How can I assist you today?,General,Greetings
@@ -23,5 +28,6 @@ Small Talk,Small talk on user input,Are you married?,"I'm married to my work, he
 Small Talk,Small talk on user input,Did you eat?,"I'm a bot, so no food for me. But I hope you had something tasty!",General,Small Talk
 Information,Asking for help,I need help,Help is my middle name! What do you need?,General,Information
 Thanks,	Responding to expressions of gratitude,	Thank you!,	You're welcome! Glad I could help.,	General,Thanks
+Expression of Affection,Responding to an affectionate statement from the user,"I love you love u ama","That’s so sweet! How can I help you today?",General,Affection
 Who are you,	Inquiry about identity,	Who are you?,	I'm AMA! How can I assist you today?.,	General,	Identity Disclosure
 What is your name,	Inquiry about identity,	What is your name?,	My name is AMA.,	General,	Identity Disclosure
